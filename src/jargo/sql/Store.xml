@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Store">
+	<typeAlias alias="StoreVO" type="jargo.vo.StoreVO" />
+		
+ 	<select id="selectStore" resultClass="StoreVO" parameterClass="StoreVO">
+		select * from STORE where STORE_number = #store_number# 
+	</select>
+	
+    <select id="selectStores" resultClass="StoreVO">
+		select * from STORE 	
+	</select>
+	
+	<insert id="insertStore" parameterClass="StoreVO" >
+		INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng, master_number)
+		VALUES (#store_number#, #owner_id#, #store_name#, #store_phone#, #store_addr#, #store_desc#, #store_subway#, #store_img#, #store_lat#, #store_lng#, 1)
+	</insert>
+	
+	<delete id="deleteStore" parameterClass="StoreVO">
+		DELETE FROM STORE WHERE STORE_number = #store_number#
+	</delete>
+	
+	<update id="updateStore" parameterClass="StoreVO">
+		UPDATE STORE SET STORE_NAME = #store_name#,STORE_phone = #store_phone# , STORE_ADDR = #store_addr#,STORE_desc = #store_desc#,STORE_subway = #store_subway#,STORE_img = #store_img#,STORE_lat = #store_lat#,STORE_lng = #store_lng#,master_number = #master_number#,owner_id=#owner_id# WHERE STORE_number = #store_number#
+	</update>
+	
+	
+
+	<select id="selectStoreByOwner" resultClass="StoreVO" parameterClass="StoreVO">
+		select * from STORE where owner_id = #owner_id# 
+	</select>
+
+</sqlMap>

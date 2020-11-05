@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Admin">
+	<typeAlias alias="AdminVO" type="jargo.vo.AdminVO" />
+		
+	<select id="selectAdmin" resultClass="AdminVO"
+		parameterClass="AdminVO">
+		select * from ADMIN where ADMIN_ID = #admin_id# 
+	</select>
+	
+    <select id="selectAdmins" resultClass="AdminVO">
+		select * from ADMIN 	
+	</select>
+	
+	<insert id="insertAdmin" parameterClass="AdminVO" >
+		INSERT INTO ADMIN VALUES (#admin_id#,#admin_pwd#)
+	</insert>
+	
+	<delete id="deleteAdmin" parameterClass="AdminVO">
+		DELETE FROM ADMIN WHERE ADMIN_ID = #admin_id#
+	</delete>
+	
+	<update id="updateAdmin" parameterClass="AdminVO">
+		UPDATE ADMIN SET ADMIN_PWD = #admin_pwd# WHERE ADMIN_ID = #admin_id#
+	</update> 
+
+</sqlMap>

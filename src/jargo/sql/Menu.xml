@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Menu">
+	<typeAlias alias="MenuVO" type="jargo.vo.MenuVO" />
+		
+	<select id="selectMenu" resultClass="MenuVO"
+		parameterClass="MenuVO">
+		select * from menu where menu_number = #menu_number# 
+	</select>
+	
+	<select id="selectSorts" resultClass="MenuVO"
+		parameterClass="MenuVO">
+		select * from menu where menu_category = #menu_category# 
+	</select>
+	
+    <select id="selectMenus" resultClass="MenuVO">
+		select * from menu 	
+	</select>
+	
+	<insert id="insertMenu" parameterClass="MenuVO" >
+		INSERT INTO menu VALUES (SEQ_menu.nextval,#menu_name#,#menu_price#,#menu_desc#,#menu_img#,#menu_category#) 
+	</insert>
+	
+	<delete id="deleteMenu" parameterClass="MenuVO">
+		DELETE FROM menu WHERE menu_number = #menu_number#
+	</delete>
+	
+	<update id="updateMenu" parameterClass="MenuVO">
+		UPDATE menu SET menu_name = #menu_name#, menu_price=#menu_price#, menu_desc = #menu_desc#, menu_img=#menu_img#, menu_category=#menu_category# WHERE menu_number = #menu_number#
+	</update>
+
+</sqlMap>

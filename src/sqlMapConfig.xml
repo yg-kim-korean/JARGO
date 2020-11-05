@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings useStatementNamespaces="true"/>
+	<sqlMap resource="jargo/sql/Customer.xml" />
+	<sqlMap resource="jargo/sql/Admin.xml" />
+	<sqlMap resource="jargo/sql/Store.xml" />
+	<sqlMap resource="jargo/sql/Master.xml" />
+	<sqlMap resource="jargo/sql/Coupon.xml" />
+	<sqlMap resource="jargo/sql/Menu.xml" />
+	<sqlMap resource="jargo/sql/Reservation.xml" />
+	<sqlMap resource="jargo/sql/Seat.xml" />	
+	<sqlMap resource="jargo/sql/Owner.xml" />
+	<sqlMap resource="jargo/sql/Board.xml" />
+	<sqlMap resource="jargo/sql/Time.xml" />
+</sqlMapConfig>

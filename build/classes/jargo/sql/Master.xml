@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Master">
+	<typeAlias alias="MasterVO" type="jargo.vo.MasterVO" />
+		
+	<select id="selectmaster" resultClass="MasterVO"
+		parameterClass="MasterVO">
+		select * from master where master_number = #master_number# 
+	</select>
+	
+    <select id="selectMasters" resultClass="MasterVO">
+		select * from master 	
+	</select>
+	
+	<insert id="insertMaster" parameterClass="MasterVO" >
+		INSERT INTO master VALUES (seq_master.nextval,#master_name#) 
+	</insert>
+	
+	<delete id="deleteMaster" parameterClass="MasterVO">
+		DELETE FROM master WHERE master_number = #master_number#
+	</delete>
+	
+	<update id="updateMaster" parameterClass="MasterVO">
+		UPDATE master SET master_name = #master_name# WHERE master_number = #master_number#
+	</update>
+
+</sqlMap>

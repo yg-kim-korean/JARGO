@@ -1,0 +1,26 @@
+INSERT INTO menu VALUES (SEQ_menu.nextval,#menu_name#,#menu_price#,#menu_desc#,#menu_img#,#menu_category#)
+
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Bruschetta',4000,'모듬버섯 소테와 그라나빠다노 치즈를 곁들이 이태리아 에피타이져','Bruschetta.jpg','Appetizer')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Fried calamari',4500,'매콤하게 튀긴 오징어와 사워크림, 스위트칠리소스를 곁들인 에피타이져','Fried calamari.jpg','Appetizer')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Hard shelled mussel stew',7000,'화이트와인과 토마토소스로 맛을 낸 매콤한 홍합찜','Hard shelled mussel stew.jpg','Appetizer')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Mega crunchy onion ring',4000,'어니언링과 메가크런치를 새콤달콤한 소스에 곁들인 에피타이져','Mega crunchy onion ring.jpg','Appetizer')
+
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Ade',3500,'레몬, 자몽, 오렌지, 와인','Ade.jpg','Dessert & Beverage')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Aroma Panna Cotta',4500,'이태리 정통 우유로 만든 홈메이드식 푸딩','Aroma Panna Cotta.jpg','Dessert & Beverage')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Bottled Beer', 6000, '하이네켄, 코로나, 기네스','Bottled Beer.jpg','Dessert & Beverage')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Brownie Crunchy with Icecream',6500,'진한 초콜렛의 퍼지 브라우니 아이스크림','Brownie Crunchy with Icecream.jpg','Dessert & Beverage')
+
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Crema',11000,'베이컨으로 맛을 낸 크림소스 스파게티','Crema.jpg','Pasta')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Fresh Mozzarella spaghetti',12000,'프리미엄급 모짜렐라 보코치니 치즈와 후레쉬한 토마토와 잘 어우러진 정통 이태리 파스타','Fresh Mozzarella spaghetti.jpg','Pasta')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Seafood Shanghai spaghetti',12500,'신선한 해산물과 피쉬소스 & 스리라차 소스를 가미한 상하이식 매콤한 퓨전 스파게티','Seafood Shanghai spaghetti.jpg','Pasta')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Seafood tomato spaghetti',10000,'지글지글 끓는 해산물토마토 소스 스파게티','Seafood tomato spaghetti.jpg','Pasta')
+
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Grilled beef green salad',14500,'최상급 갈비살과 무공해 어린잎 채소가 함께 어우러진 샐러드','Grilled beef green salad.jpg','Salad')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Grilled polo green salad',13000,'NewYork만의 특제 스파이스에 절인 닭가슴살을 그릴에 구워낸 치킨과 무공해 어린 잎 채소가 함께 어우러진 샐러드','Grilled polo green salad.jpg','Salad')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'House salad',7000,'레몬드레싱과 오리엔탈 바질드레싱을 첨가한 무공해 어린잎 채소 샐러드','House salad.jpg','Salad')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Mozzarella Bococcini green salad',13000,'모짜렐라 보코치니(한입크기라는 이탈리아어)로 본래의 모짜렐라치즈보다는 작다는 이유로 물소알 어린이란 별명을 가지고 있다. 신선하고 담백한 모짜렐라 보코치니 치즈맛을 느낄 수 있는 이탈리아 치즈 샐러드','Mozzarella Bococcini green salad.jpg','Salad')
+
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Big eye rip steak',65000,'세미드라이 숙성시킨 소고기 등심 스테이크','Bigeyeripsteak.jpg','Steak')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Blueberry Premium Boston Butt Steak',80000,'자체개발한 뉴욕만의 데리소스와 항암작용이 뛰어난(블루베리)소스로 풍미를 더한 스테이크','BlueberryPremiumBostonButtSteak.jpg','Steak')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Garic premium Boston butt steak',75000,'최고급 알목심을 지화 그릴에 조리하여 항산화 작용을 하는 마늘과 함께 오븐에 구워 마늘의 단맛으로 풍미를 살린 스테이크','Garic premium Boston butt steak.jpg','Steak')
+INSERT INTO menu VALUES (SEQ_menu.nextval,'Thick skirt steak (토시살 스테이크)',110000,'소 한 마리에 400g정도 나오는 특수부위로 부드러운 맛과 자체 개발한 색다른 비비큐소스에 잘 어울리는 스테이크','Thick skirt steak (토시살 스테이크).jpg','Steak')

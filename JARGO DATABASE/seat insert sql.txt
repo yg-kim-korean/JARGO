@@ -1,0 +1,29 @@
+
+INSERT INTO seat VALUES (seq_seat.nextval,#seat_img#,#store_number#,#seat_persons#,#seat_status#,#seat_location#)
+
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat1.jpg',22,4,00,20);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat2.jpg',22,4,00,22);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat3.jpg',22,4,00,24);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat4.jpg',22,4,00,40);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat5.jpg',22,4,00,42);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat6.jpg',22,4,00,44);
+
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat1.jpg',25,4,00,00);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat2.jpg',25,4,00,02);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat3.jpg',25,4,00,04);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat4.jpg',25,4,00,20);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat5.jpg',25,4,00,22);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat6.jpg',25,4,00,24);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat7.jpg',25,4,00,40);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat8.jpg',25,4,00,42);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat9.jpg',25,4,00,44);
+
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat1.jpg',26,4,00,00);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat2.jpg',26,4,00,02);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat3.jpg',26,4,00,04);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat4.jpg',26,4,00,20);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat5.jpg',26,4,00,22);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat6.jpg',26,4,00,24);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat7.jpg',26,4,00,40);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat8.jpg',26,4,00,42);
+INSERT INTO SEAT VALUES (seq_seat.nextval,'seat9.jpg',26,4,00,44);

@@ -1,0 +1,19 @@
+@CHARSET "EUC-KR";
+
+.mobilebody{
+		font-family: 'Terminal Dosis Light', Arial, sans-serif;
+	
+}
+#menuPanel{
+	font-family: 'Terminal Dosis Light', Arial, sans-serif;
+	
+}
+a{
+	color:black;
+	text-decoration:none;
+}
+a:HOVER {
+	
+	
+}
+

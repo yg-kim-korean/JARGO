@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 선언부 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+	
+	
+	<context:component-scan base-package="jargo.*"></context:component-scan>
+	<mvc:annotation-driven />
+	
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+	</bean><!-- 이름뒤에 .jsp붙여주는 역할 -->
+	
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="1000000000" />		
+	</bean><!-- 스프링에서 file등록할때 쓰기위해 -->
+	
+	
+ 	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<!-- 		spring framwork에서 제공하는거 쓰겟다 -->
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver">
+		</property>
+		
+		<property name="url" value="jdbc:oracle:thin:@210.107.228.135:1521:xe">
+		</property>
+		
+		<property name="username" value="jargo"></property><!-- value에 내가쓰는 jdbc에 있는거 쓰는거임 -->
+		
+		<property name="password" value="1"></property>
+
+	</bean>
+	
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+
+		<property name="configLocation" value="classpath:sqlMapConfig.xml"></property>
+
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>							
+	
+	<bean id="sqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		
+		<property name="sqlMapClient" ref="sqlMapClient"></property>
+								
+	</bean>  
+	
+</beans>

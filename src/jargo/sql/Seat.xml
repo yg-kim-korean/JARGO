@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Seat">
+	<typeAlias alias="SeatVO" type="jargo.vo.SeatVO" />
+		
+	 <select id="selectSeat" resultClass="SeatVO" parameterClass="SeatVO">
+	 select * from seat where (store_number=#store_number# and seat_location=#seat_location#)
+	 </select>
+	 
+	 <select id="selectSeatforlocation" resultClass="SeatVO" parameterClass="SeatVO">
+	 select * from seat where seat_number=#seat_number#
+	 </select>
+	 
+    <select id="selectSeats" resultClass="SeatVO">
+		select * from seat 
+	</select>
+	
+	<insert id="insertSeat" parameterClass="SeatVO" >
+		INSERT INTO seat VALUES (seq_seat.nextval,#seat_img#,#store_number#,#seat_persons#,#seat_status#,#seat_location#) 
+	</insert>
+	
+	<delete id="deleteSeat" parameterClass="SeatVO">
+		DELETE FROM seat WHERE seat_number = #seat_number#
+	</delete>
+	
+	<update id="updateSeat" parameterClass="SeatVO">
+		UPDATE seat SET seat_img = #seat_img#, store_number=#store_number#,seat_persons = #seat_persons# , seat_status = #seat_status# WHERE seat_number = #seat_number#
+	</update>
+	<select id="selectStoreSeat" resultClass="SeatVO" parameterClass="StoreVO">
+		select * from seat where store_number = #store_number# 
+	</select>
+</sqlMap>

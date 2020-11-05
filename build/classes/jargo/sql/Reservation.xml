@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Reservation">
+	<typeAlias alias="ReservationVO" type="jargo.vo.ReservationVO" />
+	<typeAlias alias="MyReservationVO" type="jargo.vo.MyReservationVO" />
+	<typeAlias alias="StoreReservationVO" type="jargo.vo.StoreReservationVO" />
+
+	<select id="selectReservation" resultClass="ReservationVO"
+		parameterClass="ReservationVO">
+		select * from reservation where reservation_number = #reservation_number# 
+	</select>
+	
+	<select id="selectReservationbycustomer_id" resultClass="ReservationVO"
+		parameterClass="ReservationVO">
+		select * from reservation where customer_id = #customer_id#  order by reservation_number desc
+	</select>
+	
+	<select id="selectReservationbystore_number" resultClass="ReservationVO"
+		parameterClass="ReservationVO">
+		select * from reservation where store_number = #store_number# 
+	</select>
+	
+	<select id="Myreservationlist" resultClass="MyReservationVO"
+		parameterClass="ReservationVO">
+		select store_name,store_phone,store_addr,store_subway,to_char(reservation_date,'yyyy-mm-dd') as reservation_date,reservation_time,seat_location from store s,time t,seat st where t.reservation_number=#reservation_number# and s.store_number=#store_number# and st.seat_number=(select seat_number from time where reservation_number=#reservation_number#)
+		
+	</select>
+	
+	
+	<select id="reservationlist" resultClass="StoreReservationVO"
+		parameterClass="ReservationVO">
+	select customer_name,customer_phone,to_char(reservation_date,'yyyy-mm-dd') as reservation_date,reservation_time,seat_location from customer c,time t,seat st where t.reservation_number=#reservation_number# and customer_id=(select customer_id from reservation where reservation_number=#reservation_number#) and st.seat_number=(select seat_number from time where reservation_number=#reservation_number#)
+	</select>
+	
+	
+    <select id="selectReservations" resultClass="ReservationVO">
+		select * from reservation 	
+	</select>
+	
+	<insert id="insertReservation" parameterClass="ReservationVO" >
+		INSERT INTO reservation VALUES (seq_reservation.nextval,#reservation_status#,#customer_id#,#store_number#,#reservation_totalprice#)
+	</insert>
+	
+	<delete id="deleteReservation" parameterClass="ReservationVO">
+		DELETE FROM reservation WHERE reservation_number = #reservation_number#
+	</delete>
+	
+	<update id="updateReservation" parameterClass="ReservationVO">
+		UPDATE reservation SET reservation_status = #reservation_status#, customer_id = #customer_id#, store_number = #store_number#, reservation_totalprice = #reservation_totalprice# WHERE reservation_number = #reservation_number#
+	</update>
+	
+	<select id="selectReservationSeq" resultClass="int">
+		select max(reservation_number) from reservation 	
+	</select>
+	
+	
+
+</sqlMap>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Owner">
+	<typeAlias alias="OwnerVO" type="jargo.vo.OwnerVO" />
+		
+	<select id="selectOwner" resultClass="OwnerVO"
+		parameterClass="OwnerVO">
+		select * from owner where owner_id = #owner_id#
+	</select>
+	
+    <select id="selectOwners" resultClass="OwnerVO">
+		select * from owner 	
+	</select>
+	
+	<insert id="insertOwner" parameterClass="OwnerVO" >
+		INSERT INTO owner VALUES (#owner_id#,#owner_pwd#,#owner_name#,#owner_phone#,#owner_position#) 
+	</insert>
+	
+	<delete id="deleteOwner" parameterClass="OwnerVO">
+		DELETE FROM owner WHERE owner_ID = #owner_id#
+	</delete>
+	
+	<update id="updateOwner" parameterClass="OwnerVO">
+		UPDATE owner SET owner_PWD = #owner_pwd#, owner_NAME = #owner_name#, owner_phone = #owner_phone#, owner_position = #owner_position# WHERE owner_ID = #owner_id#
+	</update> 
+
+</sqlMap>

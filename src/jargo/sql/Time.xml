@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Time">
+	<typeAlias alias="TimeVO" type="jargo.vo.TimeVO" />
+		
+	<select id="selectTime" resultClass="TimeVO"
+		parameterClass="TimeVO">
+		select * from time where reservation_number = #reservation_number# 
+	</select>
+	
+    <select id="selectTimes" resultClass="TimeVO">
+		select * from time 	
+	</select>
+	
+	<insert id="insertTime" parameterClass="TimeVO" >
+		INSERT INTO time VALUES (#reservation_number#,#reservation_date#,#reservation_time#,#time_status#,#seat_number#)
+	</insert>
+	
+	<delete id="deleteTime" parameterClass="TimeVO">
+		DELETE FROM time WHERE reservation_number = #reservation_number#
+	</delete>
+	
+	<update id="updateTime" parameterClass="TimeVO">
+		UPDATE time SET time_status = #time_status# WHERE reservation_number = #reservation_number#
+	</update> 
+	<select id="selectstoreseat" resultClass="TimeVO" parameterClass="TimeVO"><!--date와 time으로 timelist를 받는다.  -->
+		select * from time where (reservation_date = #reservation_date# and reservation_time = #reservation_time#)
+	</select>
+	
+
+</sqlMap>

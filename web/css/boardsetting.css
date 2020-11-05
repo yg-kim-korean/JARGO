@@ -1,0 +1,127 @@
+
+@CHARSET "EUC-KR";
+.board_list{
+	color:white;
+}
+.board_list tr td{
+	color:white;
+}
+.board_list > #board_body2 > tr td{
+	color:white;
+}
+
+#boardsetting{
+	width: 100%;
+	height: 100%;
+}
+#boardsetting tr td{
+	border: 1px solid white;
+	text-align: center;
+}
+
+#boardsetting td{		
+	text-align:center;
+}
+
+#boardsetting > .boardtext {
+	background-color: black;
+}
+#button_write {
+	padding: 5px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #8C8C8C;
+	border-radius: 5px 5px 5px 5px;
+	color: white;
+}
+#button_write:hover {
+	padding: 6px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #8C8C8C;
+	border-radius: 5px 5px 5px 5px;
+	color: black;
+}
+#writeclick {
+	padding: 5px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border: 2px solid #5D5D5D;
+	background-color: gray;
+	border-radius: 5px 5px 5px 5px;
+	color: white;
+}
+#writeclick:hover {
+	padding: 7px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border: 2px solid #5D5D5D;
+	background-color: gray;
+	border-radius: 5px 5px 5px 5px;
+	color: white;
+}
+
+.board_layer {
+	display: none;
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+/* 팝업창 뒷 여백 배경 불투명 스타일 */
+.board_layer .board_bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: .8;
+	filter: alpha(opacity = 50);
+}
+
+.board_layer .board_pop-layer {
+	display: block;
+}
+/* 팝업창 배경 및 속성  */
+.board_pop-layer {
+	font-family: 'Terminal Dosis Light', Arial, sans-serif;
+	display: none;
+	position: absolute;
+	left:45%;
+	top:50%;
+	width: 610px;
+	height: 610px;
+	background-color: black;
+	border: 5px solid #4C4C4C;
+	z-index: 10;
+	background-image:url('../images/logo.png');
+	background-size: contain;     /*팝업창안에 꽉차게 해준다*/
+	background-repeat: no-repeat;
+}
+
+.board_pop-layer .board_pop-container {
+	padding: 20px 25px;
+}
+.board_pop-layer .board_btn-r {
+	width: 100%;
+	margin: 10px 0 20px;
+	padding-top: 10px;
+	border-top: 1px solid red;
+	text-align: right;
+}
+
+#board_table1 th{
+	border-top: 3px double white;   
+   	border-bottom: 3px double white;
+	font-weight:bold;
+	text-align:center;	
+	color:white;
+}
+
+#board_body1 tr{
+	height: 15px;
+}

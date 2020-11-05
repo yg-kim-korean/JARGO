@@ -1,0 +1,37 @@
+강남역
+37.496846, 127.027630
+잠실역
+37.513176, 127.101389
+신사역
+37.518281, 127.023728
+
+
+홍대입구
+37.556769, 126.924181
+어린이대공원
+37.552621, 127.076778
+이태원
+37.534680, 126.994584
+
+
+INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng,master_number) 
+VALUES (11, '이진만', '이태원점', '02-1234-5678', '서울특별시 용산구 이태원로 183-4', 'JARGO 이태원점입니다.', '이태원역', 's1.jpg', '37.534680', '126.994584', 1);
+
+INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng,master_number) 
+VALUES (22, '박민성', '어린이대공원점', '02-1452-6725', '서울특별시 광진구 군자동 244', 'JARGO 어린이대공원점입니다.', '어린이대공원역', 's2.jpg', '37.552621', '127.076778', 1);
+
+INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng,master_number) 
+VALUES (22, '김은지', '홍대점', '02-7594-4545', '서울특별시 마포구 동교동', 'JARGO 홍대점입니다.', '홍대입구역', 's3.jpg', '37.556769', '126.924181', 1);
+
+INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng,master_number) 
+VALUES (33, '하영은', '신사점', '02-7325-4970', '서울특별시 강남구 신사동 541-4', 'JARGO 신사점입니다.', '신사역', 's4.jpg', '37.518281', '127.023728', 1);
+
+INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng,master_number) 
+VALUES (44, '엄현민', '잠실점', '02-7567-4612', '서울특별시 송파구 잠실6동 8', 'JARGO 잠실점입니다.', '잠실역', 's5.jpg', '37.513176', '127.101389', 1);
+
+INSERT INTO STORE (store_number, owner_id, store_name, store_phone, store_addr, store_desc, store_subway, store_img, store_lat, store_lng,master_number) 
+VALUES (55, '곽수진', '강남점', '02-7516-4763', '서울특별시 강남구 역삼동 822-4', 'JARGO 강남점입니다.', '강남역', 's6.jpg', '37.496846', '127.027630', 1);
+
+
+
+

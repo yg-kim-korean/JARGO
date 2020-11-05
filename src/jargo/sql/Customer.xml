@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Customer">
+	<typeAlias alias="CustomerVO" type="jargo.vo.CustomerVO" />
+		
+	<select id="selectCustomer" resultClass="CustomerVO"
+		parameterClass="CustomerVO">
+		select * from CUSTOMER where CUSTOMER_ID = #customer_id# 
+	</select>
+	  
+    <select id="selectCustomers" resultClass="CustomerVO">
+		select * from CUSTOMER
+	</select>
+	
+	<insert id="insertCustomer" parameterClass="CustomerVO" >
+		INSERT INTO CUSTOMER VALUES (#customer_id#,#customer_pwd#,#customer_name#,#customer_phone#,#customer_addr#,#customer_email#,#customer_favor#) 
+	</insert>
+	
+	<delete id="deleteCustomer" parameterClass="CustomerVO">
+		DELETE FROM CUSTOMER WHERE CUSTOMER_ID = #customer_id#
+	</delete>
+	
+	<update id="updateCustomer" parameterClass="CustomerVO">
+		UPDATE CUSTOMER SET CUSTOMER_PWD = #customer_pwd#, CUSTOMER_NAME = #customer_name#, CUSTOMER_phone = #customer_phone#, CUSTOMER_ADDR = #customer_addr#,CUSTOMER_email =#customer_email#,customer_favor= #customer_favor# WHERE CUSTOMER_ID = #customer_id#
+	</update>
+
+</sqlMap>

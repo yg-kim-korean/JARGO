@@ -1,0 +1,122 @@
+/* Vertical Accordion Style */
+.va-container{
+	position:relative;
+	margin:40px auto 0 auto;
+}
+.va-wrapper{
+	width:300px;
+	
+	height:700px;
+	
+	position:relative;
+	overflow:hidden;
+	background:#000;
+}
+.va-slice{
+	cursor:pointer;
+	position:absolute;
+	width:100%;
+	left:0px;
+	overflow:hidden;
+	
+}
+.va-slice-1{
+	height:600px;
+}
+.va-slice-2{
+}
+.va-slice-3{
+}
+.va-slice-4{
+}
+.va-slice-5{
+}
+
+.va-title {
+	font-family: 'Terminal Dosis Light', Arial, sans-serif;
+	font-size:22px;
+	margin-left:20px;
+	color:#fff;
+	text-shadow: 0px 0px 1px white;
+	
+	height:50px;
+}
+.va-content{
+	display:none;
+	margin-left:25px;
+	
+	height:100px;
+}
+.va-slice p{
+	font-size: 16px;
+	font-family: 'Terminal Dosis Light', Arial, sans-serif;
+}
+.va-slice ul{
+	margin-top:20px;
+}
+.va-slice ul li{
+	float:none;
+	margin:0px 2px;
+
+}
+.va-slice ul li a{
+	color:#fff;
+	background:#000;
+	padding:3px 6px;
+	font-size:16px;
+	font-family:'Terminal Dosis Light', Arial, sans-serif;
+	text-transform:uppercase;
+}
+.va-slice ul li a:hover{
+	background:#eede2f;
+	color:#000;
+	text-shadow:none;
+}
+
+
+
+.bf_menu_detail{
+   font-family: 'Terminal Dosis Light', Arial, sans-serif;
+   width:1000px;
+   position:fixed;
+   top:142px;
+   left:700px;
+   height:100%;
+   background:transparent url(../images/bg_black.png) repeat top left;
+
+}
+.menu_detail{
+   display:none;
+   font-family: 'Terminal Dosis Light', Arial, sans-serif;   
+   width: 1090px;
+   height:500px;   
+   margin-top:60px;
+   margin-left:-95px;
+}
+.menu_name{
+   color:#fff;
+   font-size:35px;
+   float: left;   
+   padding-top: 10px;
+   padding-left: 10px;
+   text-decoration: underline;
+}
+
+.menu_image{
+   width:550px;
+   height:500px;   
+}
+.menu_desc {
+   color:#fff;
+   font-size:16px;
+   font-family: 'Terminal Dosis Light', Arial, sans-serif;   
+      padding-left: 10px;
+   
+}
+.menu_price{
+   color:#fff;
+   font-size:30px;
+   font-family: 'Terminal Dosis Light', Arial, sans-serif;
+      padding-left: 10px;
+   
+}

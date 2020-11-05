@@ -1,0 +1,126 @@
+create table customer(
+customer_id varchar2(20) primary key,
+customer_pwd varchar2(20) not null,
+customer_name varchar2(50) not null,
+customer_phone varchar2(20) not null,
+customer_addr varchar2(50) not null,
+customer_email varchar2(20) not null,
+customer_favor varchar2(50)
+);
+
+create table admin (
+admin_id varchar2(20) primary key,
+admin_pwd varchar2(20)
+);
+
+create table time (
+reservation_number number(20),
+reservation_date date,
+reservation_time varchar2(20),
+time_status varchar2(20),
+seat_number number(20),
+foreign key (reservation_number) references reservation (reservation_number),
+foreign key (seat_number) references seat (seat_number),
+primary key (reservation_number)
+);
+
+create table seat (
+seat_number number(20),
+seat_img varchar2(20),
+store_number number(20),
+seat_persons number(20),
+seat_status varchar2(20),
+foreign key (store_number) references store (store_number),
+primary key (seat_number)
+);
+
+
+CREATE SEQUENCE SEQ_seat INCREMENT BY 1;
+
+
+create table coupon (
+coupon_number number(20),
+coupon_id varchar2(20),
+coupon_expired varchar2(20),
+coupon_usable varchar2(20),
+store_number number(20),
+foreign key (store_number) references store(store_number),
+primary key (coupon_number)
+);
+
+
+CREATE SEQUENCE SEQ_coupon INCREMENT BY 1;
+
+create table cart_menu (
+menu_number number(20),
+reservation_number number(20),
+reservation_price number(20),
+foreign key (menu_number) references menu (menu_number),
+foreign key (reservation_number) references reservation (reservation_number),
+primary key (menu_number)
+);
+
+
+CREATE TABLE MENU(
+MENU_NUMBER NUMBER(20) PRIMARY KEY,
+MENU_ID VARCHAR2(20) NOT NULL,
+MENU_NAME VARCHAR2(20) NOT NULL,
+MENU_PRICE NUMBER(20) NOT NULL,
+MENU_DESC VARCHAR(300) NOT NULL,
+MENU_IMG VARCHAR2(50) NOT NULL,
+MENU_CATEGORY1 VARCHAR2(20) NOT NULL,
+MENU_CATEGORY2 VARCHAR2(20) NOT NULL
+);
+
+
+CREATE SEQUENCE SEQ_menu INCREMENT BY 1;
+
+create table reservation(
+reservation_number number(20) PRIMARY KEY,
+reservation_status varchar2(50) not null,
+customer_id varchar2(20) references customer(customer_id),
+store_number number(20) references store(store_number),
+reservation_totalprice number(20)
+);
+
+CREATE SEQUENCE SEQ_RESERVATION INCREMENT BY 1;
+
+CREATE TABLE STORE(
+STORE_NUMBER NUMBER(20),
+OWNER_ID VARCHAR2(20),
+STORE_NAME VARCHAR2(20) NOT NULL,
+STORE_PHONE VARCHAR2(20) NOT NULL,
+STORE_ADDR VARCHAR2(20) NOT NULL,
+STORE_DESC VARCHAR2(300) NOT NULL,
+STORE_SUBWAY VARCHAR2(20) NOT NULL,
+STORE_IMG VARCHAR2(50) NOT NULL,
+STORE_LAT VARCHAR2(20) NOT NULL,
+STORE_LNG VARCHAR2(20) NOT NULL,
+MASTER_NUMBER NUMBER(20),
+FOREIGN KEY (OWNER_ID) REFERENCES OWNER(OWNER_ID),
+FOREIGN KEY (MASTER_NUMBER) REFERENCES MASTER(MASTER_NUMBER),
+PRIMARY KEY (STORE_NUMBER)
+);
+
+
+CREATE SEQUENCE SEQ_store INCREMENT BY 1;
+
+CREATE TABLE MASTER(
+MASTER_NUMBER NUMBER(20) PRIMARY KEY,
+MASTER_NMAE VARCHAR(20)
+);
+
+CREATE SEQUENCE SEQ_master INCREMENT BY 1;
+
+create table board(
+board_number number(20),
+customer_id varchar2(20),
+board_pwd varchar2(20),
+board_title varchar2(50),
+board_memo varchar2(1000),
+board_time date,
+foreign key (customer_id) references customer (customer_id),
+primary key (board_number)
+);
+
+create SEQUENCE seq_board INCREMENT by 1;

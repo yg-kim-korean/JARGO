@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Coupon">
+	<typeAlias alias="CouponVO" type="jargo.vo.CouponVO" />
+	
+	<select id="selectCouponByStore" resultClass="CouponVO"
+		parameterClass="CouponVO">
+		select * from coupon where store_number = #store_number# 
+	</select>
+		
+	<select id="selectCoupon" resultClass="CouponVO"
+		parameterClass="CouponVO">
+		select * from coupon where coupon_number = #coupon_number# 
+	</select>
+	
+    <select id="selectCoupons" resultClass="CouponVO">
+		select * from coupon 	
+	</select>
+	
+	<insert id="insertCoupon" parameterClass="CouponVO" >
+		INSERT INTO coupon VALUES (seq_coupon.nextval,#coupon_id#,#coupon_expired#,#coupon_usable#,#store_number#,#coupon_img#)
+	</insert>
+	
+	<delete id="deleteCoupon" parameterClass="CouponVO">
+		DELETE FROM coupon WHERE coupon_number = #coupon_number#
+	</delete>
+	
+	<update id="updateCoupon" parameterClass="CouponVO">
+		UPDATE coupon SET coupon_id = #coupon_id#,coupon_expired = #coupon_expired#,coupon_usable = #coupon_usable#,store_number = #store_number#,coupon_img = #coupon_img#  WHERE coupon_number = #coupon_number#
+	</update>
+	
+	
+
+</sqlMap>
